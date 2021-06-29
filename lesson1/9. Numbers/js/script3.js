@@ -1,4 +1,4 @@
-const userAge = prompt("Ваш возвраст");
+const userAge = +prompt("Ваш возвраст");
 
 const userAgeInt = parseInt(userAge);
 console.log(userAge);
