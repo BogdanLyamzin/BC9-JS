@@ -5,7 +5,7 @@
 
 const userDiopter = prompt("Введите свою остроту зрения");
 
-const status = (userDiopter > -6 && userDiopter > 5) ? "годен к военной службе" : "Не годен к военной службе";
+const status = (userDiopter > -6) ? "годен к военной службе" : "Не годен к военной службе";
 
 // let status = "";
 // if(userDiopter > -6) {

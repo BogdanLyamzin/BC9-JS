@@ -9,5 +9,34 @@
 
 const sallaryPerDay = +prompt("Введите вашу зарплату за 1 день");
 const month = prompt("Введите интересующий вас месяц");
+let result = 0;
 
+switch(month){
+    case "январь":
+    case "март":
+    case "май":
+    case "июль":
+    case "август":
+    case "октябрь":
+    case "ноябрь":
+        result = sallaryPerDay * 23;
+        break;
+        case "апрель":
+        case "июнь": 
+        case "сентябрь":
+        case "ноябрь":
+            result = sallaryPerDay * 22;
+            break;  
+    case "февраль":
+        result = sallaryPerDay * 20;
+        break;
+    default:
+        result = false;
+}
 
+if(result === false){
+    alert("Месяц выбран неправильно")
+}
+else {
+    alert(`Ваша зарплата за ${month} составит ${result}`)
+}

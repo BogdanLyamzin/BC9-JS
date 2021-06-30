@@ -11,6 +11,15 @@
 */
 
 const sum = +prompt("Введите сумму");
-const currencyFrom = prompt("Введите валюту, в которой вы принесли сумму. Варианты: uah, usd, euro", "usd");
-const currencyTo = prompt("Введите валюту, на которую вы хотите поменять деньги. Варианты: uah, usd, euro");
+const currencyFrom = prompt("Введите валюту, в которой вы принесли сумму. Варианты: uah, usd, euro", "uah");
+const currencyTo = prompt("Введите валюту, на которую вы хотите поменять деньги. Варианты: uah, usd, euro", "usd");
 
+let result = null;
+
+if(currencyFrom === "uah"){
+    if(currencyTo === "usd"){
+        result = currencyFrom / 27.58;
+    }
+}
+
+alert(`В ${currencyTo} это будет ${result}`)

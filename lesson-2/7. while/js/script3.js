@@ -13,3 +13,14 @@ if(userName) {
 else {
     console.log("Не очень то и хотелось")
 }
+
+// const arr = [];
+
+// let num = +prompt("Введите число");
+
+// while(num){
+//     arr.push(num);
+//     num = +prompt("Введите число");
+// }
+
+// console.log(arr);

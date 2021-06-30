@@ -1,7 +1,10 @@
 const answer = confirm("Готовы заполнять анкету?");
 
 if(answer) {
-    for(let i = 1; i < 4; i += 1) {
+    // for(let i = 1; i < 4; i += 1) {
+    //     alert(i);
+    // }
+    for(let i = 3; i > 0; i -= 1) {
         alert(i);
     }
     const name = prompt("Введите ваше имя")
