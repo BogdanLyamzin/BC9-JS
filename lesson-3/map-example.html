@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const arr = [15000, 25000, 45000];
+        const newArr = arr.map((item, index, array)=> item / 27.6);
+        /*
+        const newArr = [];
+        const callback = function (item, index, arr) {
+            console.log(arguments);
+            return item / 27.6;
+        }
+        for(let i = 0; i < arr.length; i++){
+            const item = arr[i];
+            const index = i;
+            const array = arr;
+            const newElement = callback(item, index, array);
+            newArr.push(newElement);
+        }
+        */
+    </script>
+</body>
+</html>

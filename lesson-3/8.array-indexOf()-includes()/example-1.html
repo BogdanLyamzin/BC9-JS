@@ -23,15 +23,15 @@
         // console.log(englishBreakfeast)
         
         // это довольно громоздко и неудобно. Поэтому был придумал метод indexOf(чтоНайти) - он возвращает индекс первого найденого элемента или -1 если его нет
-        // console.log(englishBreakfeast.indexOf(searchPharse));
-        // console.log(englishBreakfeast.indexOf("лембас"));
+        console.log(englishBreakfeast.indexOf(searchPharse));
+        console.log(englishBreakfeast.indexOf("лембас"));
         
         // // Небольшое неудобство этого метода в том, что если тебе нужно просто узнать, есть ли элемент в массиве (и тебе не важен его индекс), то нужно сравнивать с -1
         if(englishBreakfeast.indexOf(searchPharse) !== -1) {
             console.log("Питайся здоровой пищей!")
         }
         
-        // // Для этого был придуман метод includes(чтоНайти), который возвращает true или false в зависимости от результата поиска
+        // Для этого был придуман метод includes(чтоНайти), который возвращает true или false в зависимости от результата поиска
 
         if(englishBreakfeast.includes(searchPharse)) {
             console.log("Питайся здоровой пищей!")

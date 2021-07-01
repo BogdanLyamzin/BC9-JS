@@ -10,9 +10,9 @@
     <script>
         const planets = ["Меркурий", "Венера", "Земля", "Марс", "Юпитер", "Сатурн", "Уран", "Нептун"];
         
-        console.log(planets.slice(0,3));
-        console.log(planets.slice(2,4));
-        console.log(planets);
+        const planentsStr = planets.join(", ");
+        console.log(`Планеты Солнечной системы: ${planentsStr}`);
+        console.log(planets.join());
     </script>
 </body>
 </html>

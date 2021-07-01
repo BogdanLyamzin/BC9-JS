@@ -11,23 +11,24 @@
 <body>
     <script>
         const planets = ["Меркурий", "Венера", "Земля", "Марс", "Юпитер", "Сатурн", "Уран", "Нептун"];
-        const arrFirstPart = planets.slice(0, 3);
-
-        const lastPlanetIdx = planets.length - 1;
-        const arrSecondPart = planets.slice((lastPlanetIdx - 1));
-
-        const newArr = arrFirstPart.concat(arrSecondPart);
+        const firstThreePlanents = planets.slice(0, 3);
+        
+        const lastTwoPlanets = planets.slice((-2));
+        
+        const newArr = firstThreePlanents.concat(lastTwoPlanets);
+        console.log(firstThreePlanents);
+        console.log(lastTwoPlanets);
+        console.log(newArr);
         /*
         const newArr = [];
-        for(const element of arrFirstPart) {
+        for(const element of firstThreePlanents) {
             newArr.push(element);
         }
-        for(const element of arrSecondPart) {
+        for(const element of lastTwoPlanets) {
             newArr.push(element);
         }
         */
-        console.log(arrFirstPart);
-        console.log(newArr);
+
     </script>
 </body>
 

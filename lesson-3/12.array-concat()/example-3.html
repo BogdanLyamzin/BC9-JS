@@ -8,12 +8,24 @@
 </head>
 <body>
     <script>
-        const planets = ["Меркурий", "Венера", "Земля", "Марс", "Юпитер", "Сатурн", "Уран", "Нептун"];
-        const lastThreePlanets = planets.slice(-3);
-        console.log(lastThreePlanets);
-
-        const firstPlanents = planets.slice(0, -1);
-        console.log(firstPlanents)
+        const arr1 = [2, 4, 6];
+        const arr2 = [1, 3];
+        const arr3 = [["Строка", "Столбец", "Котик"], 5];
+        const arr = arr1.concat(arr2, arr3);
+        /*
+        const arr = [];
+        for(const element of arr1) {
+            arr.push(element);
+        }
+        for(const element of arr2) {
+            arr.push(element);
+        }
+        for(const element of arr3) {
+            arr.push(element);
+        }
+        */
+       console.log(arr1);
+        console.log(arr);
     </script>
 </body>
 </html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const arr1 = [1, 2, 3];
+        const arr2 = [1, 2, 3];
+        const result = arr1.toString() === arr2.toString();
+        // let result = arr1.length === arr2.length;
+        // if(result){
+        //     for(let i = 0; i < arr1.length; i++){
+        //         if(arr1[i] !== arr2[i]){
+        //             result = false;
+        //             break;
+        //         }
+        //     }
+        // }
+        const prefix = !result ? "не" : "";
+        console.log(`Массивы arr1 и arr2 ${prefix}равны`); 
+        
+    </script>
+</body>
+</html>

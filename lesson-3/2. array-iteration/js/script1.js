@@ -6,8 +6,9 @@
 */
 const soldiers = ["Румол", "Шаграт", "Ридзер", "Питер"];
 
-console.log(`Количество солдат в вашем отряде = ${soldiers.length}`);
-
+// console.log(`Количество солдат в вашем отряде = ${soldiers.length}`);
+// const lastSoldier = soldiers[soldiers.length - 1];
+// console.log(`Последний солдат - ${lastSoldier}`);
 /* Следовательно, для перебора всего массива можно использовать цикл for,
 главное - правильно написать  начальное значение и условие:
 - i изначально равен 0, потому что индекс первого элемента массива всегда 0;
@@ -15,6 +16,13 @@ console.log(`Количество солдат в вашем отряде = ${so
   это всегда индекс последнего элемента + 1
 */
 // length = индекс_последнего_элемента + 1
-for (let i = 0; i < soldiers.length; i +=1) {
+for (let i = 0; i < soldiers.length; i++) {
     console.log(soldiers[i]);
 }
+/*
+let i = 0;
+while (i < soldiers.length) {
+  console.log(soldiers[i]);
+  i++;
+}
+*/

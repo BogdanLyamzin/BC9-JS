@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const users = ["Маша", "Лара", "Марина", "Оксана", "Лара"];
+        let num = 0;
+        let idx = users.indexOf("Лара");
+        while(idx !== -1){
+            num++;
+            idx = users.indexOf("Лара", (idx + 1));
+        }
+        console.log(`Лара едина в ${num} лицах`);
+    </script>
+</body>
+</html>

@@ -9,15 +9,17 @@
 <body>
     <script>
         const planets = ["Меркурий", "Венера", "Земля", "Марс", "Юпитер", "Сатурн", "Уран", "Нептун"];
-        const arrFirstPart = planets.slice(0, 3);
+        // const index = planets.length - 2;
+        // const newArr = planets.slice(0, -1);
+        // console.log(newArr);
+        
+        const newArr2 = planets.slice(-4, 6);
+        console.log(newArr2);
 
-        const lastPlanetIdx = planets.length - 1;
-        const arrSecondPart = planets.slice((lastPlanetIdx - 1));
+        const index = Math.ceil((planets.length / 2));
+        const newArr3 = planets.slice(-index);
+        console.log(newArr3);
 
-        const newArr = [];
-        newArr.push(arrFirstPart, arrSecondPart);
-        console.log(newArr)
-       
     </script>
 </body>
 </html>
