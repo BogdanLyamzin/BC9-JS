@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    const students = ["Вова", "Катя", "Алина", "Маша", "Света", "Вова", "Александр", "Вова", "Кирилл"];
+    const idx1 = students.indexOf("Вова");
+    const idx2 = students.indexOf("Вова", (idx1+1));
+    if(idx2 !== -1){
+      console.log("Вова, иметь совесть!")
+    }
+    let idxSum = 0;
+    let idx = students.indexOf("Вова");
+    while(idx !== -1) {
+      idxSum +=1;
+      idx = students.indexOf("Вова", (idx+1));
+    }
+    console.log(`Вова поимел совесть ${idxSum} раз`)
+  </script>
+</body>
+</html>

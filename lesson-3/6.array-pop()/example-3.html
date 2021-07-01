@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <!--  Если в завтраке больше 4х наименований, 
+        перенести остальные на начало обеда.  -->
+    <script>
+        const englishBreakfeast = ["яйца", "бекон", "сосиски", "жареные помидоры", "фасоль", "булочка с джемом", "кофе"];
+        const englishDiner = [];
+
+        for(let i = englishBreakfeast.length - 1; i > 3; i--) {
+            const food = englishBreakfeast.pop();
+            englishDiner.push(food);
+        }
+      
+        console.log(englishBreakfeast);
+        console.log(englishDiner);
+    </script>
+</body>
+
+</html>
