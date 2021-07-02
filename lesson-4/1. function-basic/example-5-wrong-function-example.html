@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+        const USDcurrency = 27.6;
+
+        const convertArrToUSD = function(arr){
+            const result = [];
+            for(const value of arr){
+                const newValue = +(value / USDcurrency).toFixed(2);
+                result.push(newValue);
+            }
+            return result;
+        }
+
+        const sallaries = [12300, 6700, 15000];
+
+        const USDsallaries = convertArrToUSD(sallaries);
+        console.log(sallaries);
+        console.log(USDsallaries);
+</script>
+</body>
+</html>

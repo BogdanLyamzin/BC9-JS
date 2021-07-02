@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Arrow function declaration</title>
+</head>
+<body>
+    <script>
+
+        // function isLegal(age) {
+        //     return (age >= 18);
+        //     // if(age >= 18){
+        //     //     return true;
+        //     // }
+        //     // else {
+        //     //     return false;
+        //     // }
+        // }
+
+        const isLegal = (age) => age >= 18;
+        // const isLegal = age => age >= 18;
+        /*
+        const isLegal = (age) => {
+            return (age >= 18);
+        }
+        */
+
+        // const convertArrToUSD = (arr) => {
+        //     const result = [];
+        //     for(const value of arr){
+        //         const newValue = +(value / 27.6).toFixed(2);
+        //         result.push(newValue);
+        //     }
+        //     return result;
+        // }
+        
+        const userAge = +prompt("Введите ваш возраст")
+        if(isLegal(userAge)) {
+            console.log("Добро пожаловать!")
+        }
+        else {
+            console.log("Малолеткам вход воспрещен")
+        }
+    </script>
+</body>
+</html>

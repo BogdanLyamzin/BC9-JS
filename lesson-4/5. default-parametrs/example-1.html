@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        const strSlice = function(str, startPos, endPos = str.length){
+            // if(endPos === undefined) {
+            //     endPos = str.length
+            // }
+            let result = "";
+            for(let i = startPos; i < endPos; i +=1){
+                result += str[i]
+            }
+            return result;
+        }
+
+        const holiday = "New Year";
+        console.log(strSlice(holiday, 0, 3));
+        console.log(strSlice(holiday, 4));
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const calcSum = () => {
+            let sum = 0;
+            for(const value of arguments){
+                sum += value;
+            }
+            return sum;
+        }
+        
+        const sum = calcSum(2, 4, 6); // в стрелочных функциях нет псевдомассива arguments
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        function isName (name){
+            const result = !!(name || name.length < 2);
+            return result;
+        }
+
+        // let userName = prompt("Введите имя");
+        // if(userName) {
+        //     console.log(`Внутри круглых скобок после 
+        //     if или while пустая строка превращается в true`);
+        // }
+        // else {
+        //     console.log(`Внутри круглых скобок после 
+        //     if или while пустая строка превращается в false`);
+        // }
+        // while(userName || userName.length < 2) {
+        //     userName = prompt("Введите пожалуйста имя");
+        // }
+
+        // let userLastName = prompt("Введите фамилию");
+        // while(userLastName || userLastName.length < 2) {
+        //     userLastName = prompt("Введите пожалуйста фамилию");
+        // }
+
+        function isName (name){
+            const result = !!(name && name.length > 1);
+            return result;
+        }
+
+        let userName = prompt("Введите имя");
+        while(!isName(userName)) {
+            userName = prompt("Введите пожалуйста имя");
+        }
+
+        let userLastName = prompt("Введите фамилию");
+        while(!isName(userLastName)) {
+            userLastName = prompt("Введите пожалуйста фамилию");
+        }
+
+        console.log(`Добро пожаловать, ${userLastName} ${userName}`);
+    </script>
+</body>
+</html>

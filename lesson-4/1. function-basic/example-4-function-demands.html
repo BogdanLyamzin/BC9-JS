@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<body>
+    <h2>Когда вы создаете функцию, нужно:</h2>
+    <ul>
+        <li>Определится с именем</li>
+        <ul>
+            <li>Имя функции всегда глагол. Варианты:<ul>
+                    <li>is: - является ли чем-то. Возрвращает true или false</li>
+                    <li>calc: возвращает число на основе формулы</li>
+                    <li>get: возвращает что-то, как правило не число, например, инициалы</li>
+                </ul>
+            </li>
+        </ul>
+        <li>Подумать, какие у фунции будут параметры: что вам нужно передать
+            в функцию чтобы получить от нее нужный вам ответ. Это те данные, которые меняются</li>
+        <li>Что она будет возвращать</li>
+    </ul>
+
+    <h2>Правила для тела функции:</h2>
+    <ul>
+        <li>Выполняет одно осмысленное законченное действие</li>
+        <li>Не превышает 20 строк</li>
+        <li>работает только с локальными переменными</li>
+    </ul>
+
+    </ul>
+    <script>
+
+        const convertArrToUSD = function(arr){
+            const result = [];
+            for(const value of arr){
+                const newValue = +(value / 27.6).toFixed(2);
+                result.push(newValue);
+            }
+            return result;
+        }
+
+        const sallaries = [12300, 6700, 15000];
+
+        const USDsallaries = convertArrToUSD(sallaries);
+        console.log(sallaries);
+        console.log(USDsallaries);
+    </script>
+</body>
+
+</html>
