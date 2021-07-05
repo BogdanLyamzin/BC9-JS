@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    const product = {
+        name: "Lenovo",
+        "full name": "Lenovo IdeaPad",
+        categoryName: "laptops",
+        price: 1000
+    };
+    
+  console.log(product);
+  // delete product.price;
+  // console.log(product);
+
+    const property = prompt("Какое свойство товара вы хотите удалить?")
+
+    delete product[property]
+    console.log(product)
+
+
+</script>
+</body>
+</html>

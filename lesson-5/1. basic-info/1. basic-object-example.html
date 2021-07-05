@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    const product = {
+        name: "Lenovo",
+        "full name": "Lenovo IdeaPad",
+        categoryName: "laptops",
+        price: 1000
+    };
+    
+    console.log(product)
+
+    console.log(product.name);
+    console.log(product["full name"]);
+
+    console.log(product.price)
+    product.price = 1200;
+    console.log(product.price);
+
+    product["full name"] = "Lenovo IdeaPad X120S"
+    console.log(product["full name"]);
+
+    product.id;
+    console.log(product)
+    product.id = 456;
+    console.log(product)
+    product["discount price"] = 900;
+    console.log(product["discount price"]);
+</script>
+</body>
+</html>
