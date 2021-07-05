@@ -9,11 +9,22 @@
     const obj1 = {
         name: "Маленький Йода",
         friend: "Мандалорец",
-        music: "Eminem"
+        music: "Eminem",
     };
 
+    const obj2 = {};
 
+    for(const key in obj1){
+        obj2[key] = obj1[key];
+    }
 
+    console.log(obj1);
+    console.log(obj2);
+
+    obj1.name = "Подросший Йода";
+
+    console.log(obj1);
+    console.log(obj2);
 
 </script>
 </body>

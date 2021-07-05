@@ -7,6 +7,20 @@
 <body>
     <script>
 
+        const user = {
+            name: "Всеслав",
+            lastName: "Полоцкий",
+            middleName: "Брячеславович"
+        };
+
+        // console.log(Object.keys(user));
+        /*
+        const keys = [];
+        for(const key in user){
+            keys.push(key);
+        }
+        */
+
         const student = {
             name: "Александр",
             lastName: "Репета",
@@ -17,7 +31,12 @@
                 serials: 9
             },
             getAverageScore() {
-
+                let sum = 0;
+                const count = Object.keys(this.tabel).length;
+                for(const key in this.tabel){
+                    sum += this.tabel[key];
+                }
+                return +(sum / count).toFixed(2);
             }
         };
 

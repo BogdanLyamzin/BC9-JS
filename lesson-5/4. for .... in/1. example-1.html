@@ -7,6 +7,16 @@
 <body>
     <script>
 
+        const user = {
+            name: "Всеслав",
+            lastName: "Полоцкий",
+            middleName: "Брячеславович"
+        };
+
+        // for(const key in user) {
+        //     console.log(user[key]);
+        // }
+
         const student = {
             name: "Александр",
             lastName: "Репета",
@@ -17,11 +27,17 @@
                 serials: 9
             },
             getAverageScore() {
-
+                let sum = 0;
+                let count = 0;
+                for(const key in this.tabel){
+                    sum += this.tabel[key];
+                    count++;
+                }
+                return +(sum / count).toFixed(2);
             }
         };
 
-        console.log(student.getAverageScore())
+        console.log(student.getAverageScore());
 
         
     </script>

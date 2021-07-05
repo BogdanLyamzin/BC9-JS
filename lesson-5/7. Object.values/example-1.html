@@ -7,6 +7,19 @@
 <body>
     <script>
 
+        const user = {
+            name: "Всеслав",
+            lastName: "Полоцкий",
+            middleName: "Брячеславович"
+        };
+
+        // console.log(Object.values(user));        
+        /*
+        const values = [];
+        for(const key in user){
+            keys.push(user[key]);
+        }
+        */
         const student = {
             name: "Александр",
             lastName: "Репета",
@@ -17,14 +30,17 @@
                 serials: 6
             },
             getAverageScore() {
-
-            },
-            getWorstScore(){
-
+                let sum = 0;
+                const tabel = Object.values(this.tabel);
+                const count = tabel.length;
+                for(const value of tabel){
+                    sum += value;
+                }
+                return +(sum / count).toFixed(2);
             }
         };
 
-        console.log(student.getWorstScore())
+        console.log(student.getAverageScore())
 
         
     </script>

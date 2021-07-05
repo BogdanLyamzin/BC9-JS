@@ -6,17 +6,72 @@
 </head>
 <body>
 <script>
-    let coffeeMachine = {
+    /*
+    1. Найти из списка рецептов тот, у которого поле name равно введеному пользователем значению.
+    2.1. Если рецепт найден, то....
+    2.2. Если рецепт не найден
+    */
+    const coffeeMachine = {
         water: 1000,
         coffee: 200,
         milk: 500,
-        makeCoffee(coffeeType) {
+        worth: 0,
+        maxWorth: 1000,
+        recipes: {
+             "эспрессо": {
+                water: -20,
+                coffee: -5,
+                worth: 30
+            },
+            "капучинно": {
+                water: -40,
+                coffee: -10,
+                milk: -150,
+                worth: 70
+            },            
+        },
+        addRecipe(newRecipe){
 
+        },
+        clearWorth(){
+            this.worth = 0;
+        },
+        makeCoffee(coffeeType) {
+            const recipe = this.recipes[coffeeType];
+            if(!recipe){
+                return "Такого кофе не существует";
+            }
+            // if(!(coffeType in this.recipes)){
+            //     return "Такого кофе не существует";
+            // }
+                if((this.worth + recipe.worth)  > this.maxWorth){
+                    return "Очистите лоток для отходов";
+                }
+            for(const key in recipe){
+                this[key] += recipe[key];
+            }
+            return `Ваш ${coffeeType} готов`;
+            // const recipe = {};
+            // for(const value of this.recipes){
+            //     if(value.name === coffeeType){
+            //         Object.assign(recipe, value);
+            //         break;
+            //     }
+            // }
+
+            // if(!Object.keys(recipe).length){
+            //     return "Такого кофе не существует";
+            // }
+            // for(const key in recipe){
+            //     this[key] += recipe[key];
+            // }
         }
     }
-    let coffeeWant = prompt("Чего изволите?");
-    coffeeMachine.makeCoffee(coffeeWant);
-
+    // const coffeeWant = prompt("Чего изволите?");
+    console.log(coffeeMachine);
+    const result = coffeeMachine.makeCoffee("капучинно");
+    console.log(result);
+    console.log(coffeeMachine);
 </script>
 </body>
 </html>

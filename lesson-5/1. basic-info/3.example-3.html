@@ -14,18 +14,24 @@
         price: 1000,
         weight: undefined
     };
+    // product.weight = getWeight();
+    // console.log(product.description);
+    // if(product.weight === undefined){
+    //     console.log("У объекта product нет свойства weight");
+    // }
     
-  console.log("name" in product);
-  console.log("height" in product);
+//   console.log("name" in product);
+//   console.log("weight" in product);
+//   console.log("height" in product);
 
-    // const property = prompt("Какое свойство товара вы хотите знать?")
+    const property = prompt("Какое свойство товара вы хотите знать?")
 
-    // if("property" in product) {
-    //   console.log("Такого свойства у товара нет")
-    // }
-    // else {
-    //   console.log(product[property]);
-    // }
+    if(property in product) {
+        console.log(product[property]);
+    }
+    else {
+      console.log("Такого свойства у товара нет")
+    }
 
 
 

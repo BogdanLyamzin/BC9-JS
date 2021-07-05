@@ -8,18 +8,42 @@
 
 <body>
     <script>
+
+        // console.log(Math.pow(5, 2));
+        // console.log(Math.max(5, 2, 10, 7));
+
         const studentGoIt = {
+            college: "GoIT",
             history: 7,
             politic: 12,
             serials: 9,
             getAverageScore() {
-
+                const sum = this.history + this.politic + this.serials;
+                return +(sum / 3).toFixed(2);
             }
         };
 
-        console.log(studentGoIt);
-        console.log(studentGoIt.getAverageScore());
+        studentGoIt.getBestScore = function(){
+            console.log(this);
+        }
 
+        const studentKPI = {
+            college: "KPI",
+            history: 10,
+            politic: 10,
+            serials: 12,
+            getAverageScore() {
+                const sum = this.history + this.politic + this.serials;
+                return +(sum / 3).toFixed(2);
+            }
+        };
+
+        // console.log(studentGoIt);
+        // studentGoIt.getAverageScore();
+        // studentGoIt.getBestScore();
+        // studentKPI.getAverageScore();
+        console.log(studentGoIt.getAverageScore());
+        console.log(studentKPI.getAverageScore());
 
     </script>
 </body>
