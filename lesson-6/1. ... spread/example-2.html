@@ -7,21 +7,22 @@
 <body>
     <script>
 
+        // const numbers = [6, 7, 8];
+        // console.log(Math.max(...numbers)); // Math.max(6, 7, 8)
+        // console.log(Math.min(...numbers)); // Math.min(6, 7, 8)
+
         const getSallariesInUSD = (firstSallary, secondSallary, thirdSallary)=> {
             return {
-                firstSallary: firstSallary / 27.8,
-                secondSallary: secondSallary / 27.8,
-                thirdSallary: thirdSallary / 27.8
+                firstSallary: +(firstSallary / 27.8).toFixed(2),
+                secondSallary: +(secondSallary / 27.8).toFixed(2),
+                thirdSallary: +(thirdSallary / 27.8).toFixed(2)
             };
         }
 
-        const numbers = [6, 7, 8];
-        console.log(Math.max(...numbers));
-        console.log(Math.min(...numbers));
-
         const sallaries = [1200, 3000, 56000];
 
-        const sallariesObj = getSallariesInUSD(...sallaries)
+        const sallariesObj = getSallariesInUSD(...sallaries);
+        console.log(sallariesObj);
     </script>
 </body>
 </html>

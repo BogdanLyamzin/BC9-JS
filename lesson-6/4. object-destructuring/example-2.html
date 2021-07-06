@@ -13,16 +13,27 @@
             castle: "Утес Кастерли",
             words: "Услышь мой рёв!",
             sword: "Светлый рёв",
+            children: {
+                dauther: "Серсея",
+                son: "Джейме"
+            },
             vasalls: ["Рейны", "Веларионы"]
         };
 
-        const {name: userName, lastName: userlastName} = user;
+        const {name: userName, lastName: userlastName, children: {...userChildren}, vasalls: [firstVasall, secondVasall]} = user;
+        // const [firstVasall, secondVasall] = user.vasalls;
         /*
         const userName = user.name;
         const userLastName = user.lastName;
         */
-        console.log(userName);
-        console.log(userlastName);
+        // console.log(userName);
+        // console.log(userlastName);
+        // console.log(firstVasall);
+        // console.log(secondVasall);
+
+        user.children.son = "Тирион";
+        console.log(user.children);
+        console.log(userChildren);
     </script>
 </body>
 </html>

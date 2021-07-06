@@ -12,8 +12,14 @@
             age: "Infinity"
         };
 
-        const user2 = {...user1}; // name: "Alexandr",  lastName: "Repeta", age: "Infinity"
-        user1.age = "-Infinity";
+        // const user2 = {...user1}; // name: "Alexandr",  lastName: "Repeta", age: "Infinity"
+        // /*
+        // const user2 = {};
+        // for(const key of user1){
+        //     user2[key] = user1[key];
+        // }
+        // */
+        // user1.age = "-Infinity";
         // console.log(user1);
         // console.log(user2);
 
@@ -35,12 +41,12 @@
         // const newProducts = [...products]; // копируем массив ссылок на объекты, а не сами объекты
         const newProducts = [];
         for(const value of products) {
-            const newObj = {...value};
-            newProducts.push(newObj);
+            const newValue = {...value};
+            newProducts.push(newValue);
         }
         products[0].price = 10000;
         console.log(products);
-        console.log(newProducts)
+        console.log(newProducts);
     </script>
 </body>
 </html>

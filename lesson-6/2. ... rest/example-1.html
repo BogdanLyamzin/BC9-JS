@@ -7,24 +7,18 @@
 <body>
     <script>
 
-        const arrSplice = function(from, count, ...newValues) {
-
+        const copyARrWithReplace = (arr, from, count, ...newValues) => {
+            // const newArguments = Array.from(arguments);
+            // const newValues = newArguments.slice(3);
+            // console.log(newValues);
+            const newArr = [...arr.slice(0, from), ...newValues, ...arr.slice(from + count)];
+            return newArr;
         };
 
-        const getAvaregeScore = function(...arr) {
-            let scoreSum = 0;
-            // console.log(arr)
-            // const arr = Array.from(arguments);
-            // const scoreCount = arr.length;
-            // for(const value of arr){
-            //     scoreSum += value;
-            // }
-            // const result = scoreSum / scoreCount;
-            // return result;
-        };
-
-        const avarageScore = getAvaregeScore(4, 7, 12, 6, 11);
-        console.log(avarageScore)
+        const houses = ["Грейджои", "Баратеоны", "Мартеллы", "Старки", "Аррены", "Тиреллы", "Таргариены"];
+        const newHouses = copyARrWithReplace(houses, 3, 1, "Болтоны", "Фреи");
+        console.log(newHouses);
+       
     </script>
 </body>
 </html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+        1. Объявить скелет функции.
+        2. Создать переменную для хранения индекса самого дешевого товара
+        3. Создать переменную для хранения самой дешевой текущей цены. 
+        4. В процессе перебора массива сравнивать цену на текущий перебираемый товар
+        с самой дешевой ценой.
+        5. Вернуть объект по индексу самой дешевой цены.  
+        */
+        const getCheapestProduct = (products)=>{
+            const prices = [];
+            for(const {price} of products){
+                prices.push(price);
+            }
+           const minPrice = Math.min(...prices);
+           const minPriceIndex = prices.indexOf(minPrice);
+           
+           return products[minPriceIndex];
+        }
+        // const getCheapestProduct = (products)=>{
+        //     let index = 0;
+        //     let {price: chepeastPrice} = products[0];
+        //     for(let i = 1; i < products.length; i++){
+        //         const {price} = products[i];
+        //         // chepeastPrice = (price < chepeastPrice) ? price : chepeastPrice;
+        //         // index = (price < chepeastPrice) ? i : index;
+        //         if(price < chepeastPrice) {
+        //             chepeastPrice = price;
+        //             index = i;
+        //         }
+        //     }
+        //     return products[index]
+        // }
+
+        const products = [
+            {
+                name: "Acer Swift 3",
+                price: 18000
+            },
+            {
+                name: "Lenovo X120S",
+                price: 12000
+            },
+            {
+                name: "Huawei MateBook D",
+                price: 23000
+            }
+        ];
+
+        const cheapestProduct = getCheapestProduct(products);
+        console.log(cheapestProduct);
+        
+        
+    </script>
+</body>
+</html>

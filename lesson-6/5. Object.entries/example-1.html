@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        const getObjText = (obj)=>{
+            let str = "";
+            for(const [key, value] of Object.entries(obj)){
+                str += `${key}: ${value}\n`;
+            }
+            return str;
+        }
+
+        /*
+           name: "Lenovo X120S",
+           price: 12000
+        */
+
+        const products = [
+            {
+                name: "Lenovo X120S",
+                price: 12000
+            },
+            {
+                name: "Acer Swift 3",
+                price: 18000
+            },
+            {
+                name: "Huawei MateBook D",
+                price: 23000
+            }
+        ];
+
+    //    const [firstProperty, secondProperty] = Object.entries(products[0]);
+    //     console.log(firstProperty);
+    //     console.log(secondProperty);
+
+        for(const product of products){
+            console.log(getObjText(product));
+            // for(const [key, value] of Object.entries(product)){
+            //     console.log(`${key}: ${value}`);
+            // }
+            // for(const key in value){
+            //     console.log(`${key}: ${value[key]}`);
+            // }
+        }
+        
+        
+    </script>
+</body>
+</html>

@@ -7,40 +7,34 @@
 <body>
     <script>
 
-        const getBasicInfo = function(obj){
-            const newObj = {
-                name: obj.name,
-                price: obj.price
+        const getBasicInfo = function({name, img, price}){
+            const basicInfo = {
+                name,
+                img: img[0],
+                price
             };
-            return newObj;
+
+            return basicInfo;
         };
 
-        // const getBasicInfo = function({name, price}){
-        //     const newObj = {name, price};
-        //     return newObj;
-        // };
-
-
-        const showReviews = function(obj){
-            for(const value of obj.reviews){
-                console.log(`${value.name}: ${value.text}`)
-            }
+        const showReviews = function({reviews}){
+           for(const {name: reviewAuthor, text = ""} of reviews){
+               // const {name. text} = reviews[i]
+               if(reviewAuthor && text){
+                console.log(`${reviewAuthor}: "${text}"`)
+               }
+           }
         };
-
-        // const showReviews = function({reviews}){
-        //     for(const {name, text} of reviews){
-        //         console.log(`${name}: ${text}`)
-        //     }
-        // };
 
         const product = {
             name: "iphone X",
+            img: ["./i.jpg", "./2.jpg", "./3.jpg"],
             price: 14500,
             article: 23324,
             reviews: [{
                 name: "Александра",
                 date: "12-03-2020",
-                text: "В пиве не утонул"
+                text: "Работает как часы"
             }],
             techSpec: [{
                 name: "Процессор",
@@ -49,7 +43,12 @@
         };
 
         const productBasicInfo = getBasicInfo(product);
-
+        /*
+        var obj = product;
+        var {name, img, price} = product;
+        */
+        console.log(productBasicInfo);
+        showReviews(product)
         
     </script>
 </body>
