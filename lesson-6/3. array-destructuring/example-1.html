@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        // const userName = prompt("Введите имя");
+        // const userLastName = prompt("Введите фамилию");
+        // const userMiddleName = prompt("Введите отчество");
+        const userFIO = prompt("Введите ФИО");
+        const fioArr = userFIO.split(" ");
+        const [userLastName, userName, userMiddleName] = fioArr;
+        /*
+        userLastName = fioArr[0];
+        userName = fioArr[1];
+        userMiddleName = fioArr[2]
+        */
+       console.log(userLastName)
+       console.log(userName)
+       console.log(userMiddleName)
+    </script>
+</body>
+</html>

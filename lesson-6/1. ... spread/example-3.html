@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        const houses = ["Грейджои", "Баратеоны", "Мартеллы", "Старки", "Аррены", "Тиреллы", "Таргариены"];
+
+        // const housesCopy = houses.slice(0)
+        const housesCopy = [...houses] // ["Грейджои", "Баратеоны", "Мартеллы", "Старки", "Аррены", "Тиреллы", "Таргариены"]
+        houses[3] = "Болтоны";
+        console.log(houses);
+        console.log(housesCopy);
+        </script>
+</body>
+</html>

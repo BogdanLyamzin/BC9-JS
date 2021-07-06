@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        const user = {
+            name: "Vika",
+            lastName: "Химич"
+        };
+
+        const additionalInfo = {
+            age: undefined,
+            favoriteBook: "Источник"
+        };
+
+        const scores = {
+            history: 12,
+            biology: 8,
+            english: 32
+        };
+
+        const anketa = {...user, ...additionalInfo, scores: {...scores}};
+        /*
+            name: "Vika",
+            lastName: "Химич",
+            age: undefined,
+            favoriteBook: "Источник",
+            scores: {
+                history: 12,
+                biology: 8,
+                english: 32
+            }
+        */
+        console.log(anketa)
+    </script>
+</body>
+</html>

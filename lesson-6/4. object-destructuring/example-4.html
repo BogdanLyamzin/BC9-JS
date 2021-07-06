@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        const user = {
+            name: "Тайвин",
+            lastName: "Ланнистер",
+            status: "глава дома Ланнистеров",
+            castle: "Утес Кастерли",
+            words: "Услышь мой рёв!",
+            sword: "Светлый рёв",
+            vasalls: ["Рейны", "Веларионы"],
+            marriage: true
+        };
+
+        const {name, lastName, marriage, ...userAdditionalInfo} = user;
+        console.log(name);
+        console.log(lastName);
+        console.log(marriage);
+        console.log(userAdditionalInfo);
+    </script>
+</body>
+</html>

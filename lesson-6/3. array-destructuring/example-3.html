@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        const userFIO = prompt("Введите ФИО");
+        const fioArr = userFIO.split(" ");
+        const [userLastName, userName, userMiddleName = "Сидорович"] = fioArr;
+
+       console.log(userLastName);
+       console.log(userName);
+       console.log(userMiddleName);
+    </script>
+</body>
+</html>

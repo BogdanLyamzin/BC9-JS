@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        const user1 = {
+            name: "Alexandr",
+            lastName: "Repeta",
+            age: "Infinity"
+        };
+
+        const user2 = {...user1}; // name: "Alexandr",  lastName: "Repeta", age: "Infinity"
+        user1.age = "-Infinity";
+        // console.log(user1);
+        // console.log(user2);
+
+        const products = [
+            {
+                name: "Lenovo X120S",
+                price: 12000
+            },
+            {
+                name: "Acer Swift 3",
+                price: 18000
+            },
+            {
+                name: "Huawei MateBook D",
+                price: 23000
+            }
+        ];
+
+        // const newProducts = [...products]; // копируем массив ссылок на объекты, а не сами объекты
+        const newProducts = [];
+        for(const value of products) {
+            const newObj = {...value};
+            newProducts.push(newObj);
+        }
+        products[0].price = 10000;
+        console.log(products);
+        console.log(newProducts)
+    </script>
+</body>
+</html>

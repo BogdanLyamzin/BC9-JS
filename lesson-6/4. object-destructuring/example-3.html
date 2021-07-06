@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        const user = {
+            name: "Тайвин",
+            lastName: "Ланнистер",
+            status: "глава дома Ланнистеров",
+            castle: "Утес Кастерли",
+            words: "Услышь мой рёв!",
+            sword: "Светлый рёв",
+            vasalls: ["Рейны", "Веларионы"],
+            // marriage: true
+        };
+
+        const {name, lastName, marriage = false} = user;
+        /*
+        const name = user.name;
+        const lastName = user.lastName;
+        let marriage = false;
+        if(user.hasOwnProperty("marriage")) {
+            marriage = user.marriage;
+        }
+        */
+        console.log(marriage)
+    </script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+
+        const getSallariesInUSD = (firstSallary, secondSallary, thirdSallary)=> {
+            return {
+                firstSallary: firstSallary / 27.8,
+                secondSallary: secondSallary / 27.8,
+                thirdSallary: thirdSallary / 27.8
+            };
+        }
+
+        const numbers = [6, 7, 8];
+        console.log(Math.max(...numbers));
+        console.log(Math.min(...numbers));
+
+        const sallaries = [1200, 3000, 56000];
+
+        const sallariesObj = getSallariesInUSD(...sallaries)
+    </script>
+</body>
+</html>

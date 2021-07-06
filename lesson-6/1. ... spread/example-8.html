@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    const user1 = {
+      name: "Alex",
+      lastName: "Петров",
+    };
+
+    const user2 = {
+      name: "Валерия",
+      lastName: "Минина",
+      flat: true
+    };
+
+    const student1 = {...user1, flat: false};
+    const student2 = {...user2, flat: false};
+
+    console.log(student1);
+    console.log(student2);
+
+
+  </script>
+</body>
+</html>

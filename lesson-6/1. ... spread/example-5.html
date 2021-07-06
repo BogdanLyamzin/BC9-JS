@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <ul class="navbar-nav">
+        <li class="navbar-nav-item">
+            <a href="" class="navbar-nav-link">Item 1</a>
+        </li>
+        <li class="navbar-nav-item">
+            <a href="" class="navbar-nav-link">Item 2</a>
+        </li>
+        <li class="navbar-nav-item">
+            <a href="" class="navbar-nav-link active">Item 3</a>
+        </li>
+        <li class="navbar-nav-item">
+            <a href="" class="navbar-nav-link">Item 4</a>
+        </li>
+        <li class="navbar-nav-item">
+            <a href="" class="navbar-nav-link">Item 5</a>
+        </li>
+    </ul>
+    <script>
+
+        const menuNavLinks = document.getElementsByClassName("navbar-nav-link")
+        const activeMenuLink = [...menuNavLinks].find(elem => elem.classList.contains("active"))
+        console.log(activeMenuLink);
+        
+        const getSallariesInUSD = function(){
+            // const sallaries = Array.from(arguments);
+            const sallaries = [...arguments];
+            return sallaries.map(item => item / 27.8);
+            /*
+            const result = [];
+            const func = (item) => item / 27.8;
+            for(let i = 0; i < sallaries.length; i +=1){
+                const newArrElem = func(sallaries[i]);
+                result.push(newArrElem)
+            }
+            delete func;
+            */
+        };
+
+        const sallariesInUSD = getSallariesInUSD(15000, 12600, 40000);
+        console.log(sallariesInUSD)
+    </script>
+</body>
+</html>
