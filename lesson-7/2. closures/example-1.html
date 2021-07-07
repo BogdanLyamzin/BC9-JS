@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  /*
+[[LexicalEnvironment]] = {
+Environment Record: {
+    this, all local variables
+},
+[[Environment]]: внешнее лексическое окружение
+}
+ */
+  // Global LexicalEnvironment - null
+  // новое лексическое окружение функции создаётся каждый раз, когда функция выполняется.
+  // Все функции «при рождении» получают скрытое свойство [[Environment]], которое ссылается на лексическое окружение места, где они были созданы.
+  // функция навсегда запоминает ссылку на лексическое окружение, где она была создана. И [[Environment]] – скрытое свойство функции, которое содержит эту ссылку.
+</script>
+</body>
+</html>
