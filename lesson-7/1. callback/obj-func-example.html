@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const bank = {
+            currencies: {
+                USD: 27.6,
+                Euro: 33.3
+            },
+            convertToUSD(money){
+                const {USD} = this.currencies;
+                const newMoney = this.calc(money);
+                return newMoney;
+            },
+            convertToEuro(money){
+                const {Euro} = this.currencies;
+                const newMoney = this.calc(money);
+                return newMoney;
+            },
+            calc(value, currency){
+                return +(value / currency).toFixed(2);
+            },
+            convertTo(money, currencyFrom, currencyTo){
+
+            }
+        }
+    </script>
+</body>
+</html>

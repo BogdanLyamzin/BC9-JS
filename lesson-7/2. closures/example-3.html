@@ -5,6 +5,49 @@
     <title>Title</title>
 </head>
 <body>
+<script>
 
+    /*
+    window["Environment Record"] = {
+      
+    }
+    */
+      const userName = 'Александр';
+      // window["Environment Record"].userName = 'Александр';
+
+      const calcCircleArea = (radius)=> {
+        // console.log(userName);
+        const area = PI * radius **2;
+        // convertToUSD[[LexicalEnvironment]][[Environment]].PI * 
+        return area;
+      };
+        /* convertToUSD[[LexicalEnvironment]] = {
+          "Environment Record": {
+
+          },
+          [[Environment]]: window["Environment Record"]
+        }
+        */      
+
+      const PI = 3.1415926;
+      // window["Environment Record"].PI = 3.1415926;
+
+      const result = calcCircleArea(10);
+        /* 
+        const obj1 = {};
+        convertToUSD[[LexicalEnvironment]]["Environment Record"] = obj1;
+        convertToUSD[[LexicalEnvironment]]["Environment Record"].radius = 10;
+        ....
+        if(какая-то функция сохранила ссылку на obj1 ?) {
+         объект obj1 не удаляем
+        }
+        else {
+          delete obj1;
+        }
+        convertToUSD[[LexicalEnvironment]]["Environment Record"] = null
+        */          
+      console.log(result);
+
+</script>
 </body>
 </html>

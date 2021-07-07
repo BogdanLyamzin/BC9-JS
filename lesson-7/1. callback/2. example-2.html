@@ -10,15 +10,28 @@
         const user = {
             name: "Годрик",
             lastName: "Гриффиндор",
-            sword: "",
+            sword: "Годрик Гриффиндор",
             sallaries: [13000, 15000, 12500],
-            getModifySallaries(func){
-
+            getModifySallaries(callback){
+                console.log(callback);
+                const newSallaries = [];
+                for(const value of this.sallaries){
+                    const newValue = callback(value);
+                    newSallaries.push(newValue)
+                }
+                return newSallaries;
             }
         };
 
-        // const sallariesUSD = user.getModifySallaries();
+        // getModifySallaries(callback(currentValue){retrun newScoreValue})
 
+        const convertToUSD = (value) => +(value / 27.6).toFixed(2);
+
+        const sallariesUSD = user.getModifySallaries(convertToUSD);
+        const sallarieEuro = user.getModifySallaries((value)=> +(value / 33.3).toFixed(2));
+        console.log(user.sallaries);
+        console.log(sallariesUSD);
+        console.log(sallarieEuro);
     </script>
 </body>
 </html>

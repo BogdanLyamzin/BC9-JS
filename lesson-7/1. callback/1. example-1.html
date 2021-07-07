@@ -14,20 +14,80 @@
         const user = {
             name: "Годрик",
             lastName: "Гриффиндор",
-            sword: "",
+            sword: "Годрик Гриффиндор",
             tabel: {
                 basicMagic: 70,
                 flight: 40,
                 fight: 100
             },
             getModifyScores(func){
+                console.log(func);
+                const newTabel = {};
+                for(const [key, value] of Object.entries(this.tabel)){
+                    // console.log(value);
+                    const newScore = func(value);
+                    // console.log(newScore);
+                    newTabel[key] = newScore;
+                }
+                return newTabel;
+            },
+            getModifyTabel(callback){
 
+            },
+            addScore(scoreName, scoreValue){
+                this.tabel[scoreName] = scoreValue;
+            },
+            changeTabelScores(callback) {
+                for(const [key, value] of Object.entries(this.tabel)){
+                    this[key] = callback(value);
+                }
+            },
+            changeTabel(callback){
+                const newTabel = callback(this.tabel);
+                this.tabel = newTabel;
             }
         };
 
-        const tabelUkraine = user.getModifyScores(getTwelveScore);
-        const tabelFiveScore = user.getModifyScores(getFiveScore);
-       
+        // getModifyScores(callback(currentScore){})
+        // getModifyTabel(callback(scoreName, scoreValue){})
+        // changeTabelScores(callback(currentScore){})
+        // changeTabel(callback({scoreName1: scoreValue1, scoreName2: scoreValue2}){})
+
+        // const convert100To12 = (score) =>{
+        //     console.log(score);
+        //     const newScore = Math.round((score / 100) * 12);
+        //     console.log(newScore);
+        //     return newScore;
+        // }
+
+        // const tabelTwelve = user.getModifyScores(convert100To12);
+        /*
+        var func = convert100To12;
+        */        
+        const tabelTwelve = user.getModifyScores(() => Math.round((score / 100) * 12));
+        // const tabelTwelve = user.getModifyScores(function(){
+        //     return Math.round((score / 100) * 12)
+        // });
+        /*
+        var func1212bdf = function(){
+            return Math.round((score / 100) * 12)
+        }
+        var func = func1212bdf
+        */
+        // delete newTabel
+
+
+
+        // const tabelTwelve = {};
+        // for(const key of user.tabel){
+        //     tabelTwelve[key] = Math.round((user.tabel[key] / 100) * 12);
+        // }
+        // for(const [key, value] of Object.entries(user.tabel)){
+        //     tabelTwelve[key] = Math.round((value / 100) * 12);
+        // }
+        // console.log(tabelTwelve);
+
+        
 
 
     </script>

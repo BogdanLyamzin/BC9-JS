@@ -8,24 +8,22 @@
 </head>
 <body>
     <script>
-        
         const createConvertFunc = (currency)=>{
-            console.log(currency);
             const func = (value)=>{
                 const newValue = +(value / currency).toFixed(2);
                 return newValue
             }
             return func;
         };
-
+      
         const convertToUSD = createConvertFunc(27.6);
         // console.log(convertToUSD);
         const sallaryInUSD = convertToUSD(10000);
-        // console.log(sallaryInUSD);
+        console.log(sallaryInUSD);
 
         const convertToEuro = createConvertFunc(33.3);
         const sallaryInEuro = convertToEuro(10000);
-        // console.log(sallaryInEuro);
+        console.log(sallaryInEuro);    
     </script>
 </body>
 </html>

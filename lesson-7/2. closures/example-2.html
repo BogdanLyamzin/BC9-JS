@@ -6,17 +6,38 @@
 </head>
 <body>
 <script>
-
-    const createCounter = function (start, step) {
-        return function () {
-            start += step;
-            return start;
+      const convertToUSD = (value)=> {
+        const newValue = +(value / 27.6).toFixed(2);
+        return newValue;
+      }
+        /* convertToUSD[[LexicalEnvironment]] = {
+          "Environment Record": null
         }
-    };
-
-
-
-
+        */
+        const sallaryInUSD = convertToUSD(40000);
+        /* 
+        const obj1 = {};
+        convertToUSD[[LexicalEnvironment]] = {
+          "Environment Record": obj1
+        }
+        convertToUSD[[LexicalEnvironment]]["Environment Record"].value = 40000;
+        convertToUSD[[LexicalEnvironment]]["Environment Record"].newValue = +(convertToUSD[[LexicalEnvironment]]["Environment Record"].value / 27.6).toFixed(2);
+        return convertToUSD[[LexicalEnvironment]]["Environment Record"].newValue;
+        convertToUSD[[LexicalEnvironment]]["Environment Record"] = null;
+        */       
+       
+        const sallaryInUSD = convertToUSD(20000);
+        /* 
+        const obj1 = {
+          value: 20000
+        }
+        convertToUSD[[LexicalEnvironment]] = {
+          "Environment Record": obj1
+        }
+        convertToUSD[[LexicalEnvironment]]["Environment Record"].newValue = +(convertToUSD[[LexicalEnvironment]]["Environment Record"].value / 27.6).toFixed(2);
+        return convertToUSD[[LexicalEnvironment]]["Environment Record"].newValue;
+        convertToUSD[[LexicalEnvironment]]["Environment Record"] = null;
+        */          
 
 
 </script>

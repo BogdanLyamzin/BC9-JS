@@ -13,20 +13,35 @@
             sword: "",
             sallaries: [9000, 15000, 12500],
             tempSallaries: [],
-            getModifySallaries(func){
-
+            getModifySallaries(callback){
+                const newSallaries = [];
+                for(const value of this.sallaries){
+                    const newValue = callback(value);
+                    newSallaries.push(newValue)
+                }
+                return newSallaries;
             },
-            getFilterSallaries(func){
-
-            },
-            getModifyFilterSallaries(callback1, callback2){
-
+            getFilterSallaries(callback){
+                const filteredSallaries = [];
+                for(const value of this.sallaries){
+                    const filterResult = callback(value);
+                    if(filterResult){
+                        filteredSallaries.push(value);
+                    }
+                }
+                return filteredSallaries;
             }
         };
+        // getModifySallaries(callback(currentValue){retrun newScoreValue})
+        // getFilterSallaries(callback(currentValue){return true/false})
 
-        // const sallariesUSD = user.getModifySallaries();
-        // const hightSallaries = user.getFilterSallaries();
-        // const hightSallariesInUSS = user.getModifyFilterSallaries()
+        const sallariesUSD = user.getModifySallaries((value)=> +(value / 27.6).toFixed(2));
+        const hightSallary = +prompt("Введите критерий высокой зарплаты");
+        const hightSallaries = user.getFilterSallaries((value)=> value >= hightSallary);
+
+        console.log(sallariesUSD);
+        console.log(hightSallaries);
+
 
     </script>
 </body>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const createCounter = (value, step)=> {
+            const counter = ()=>{
+                value += step;
+                return value;
+            }
+            return counter;
+        };
+
+        const firstCounter = createCounter(0, 2);
+        /*
+        const localVariables1 = {
+            value: 0,
+            step: 2
+        }
+            const counter = ()=>{
+                localVariables1.value += localVariables1.step;
+                return localVariables1.value;
+            }   
+            return counter;
+            const firstCounter = counter;
+            if(у кого-то сохранилась ссылка на localVariables1?) {
+                ничего не делаем
+            }
+            else {
+                delete localVariables1
+            }
+        */
+        console.log(firstCounter());
+        /*
+            localVariables1.value += localVariables1.step;
+            return localVariables1.value;  
+            localVariables1 = {
+                value: 2,
+                step: 2
+            }      
+        */
+        console.log(firstCounter());
+        /*
+            localVariables1.value += localVariables1.step;
+            return localVariables1.value;  
+            localVariables1 = {
+                value: 4,
+                step: 2
+            }      
+        */
+        const secondCounter = createCounter(10, 5);
+        /*
+        const localVariables2 = {
+            value: 10,
+            step: 5
+        }
+            const counter = ()=>{
+                localVariables2.value += localVariables2.step;
+                return localVariables2.value;
+            }   
+            return counter;
+            const secondCounter = counter;
+            if(у кого-то сохранилась ссылка на localVariables2?) {
+                ничего не делаем
+            }
+            else {
+                delete localVariables2
+            }
+        */        
+        console.log(secondCounter());
+        /*
+            localVariables2.value += localVariables2.step;
+            return localVariables2.value;  
+            localVariables1 = {
+                value: 15,
+                step: 5
+            }      
+        */        
+        console.log(secondCounter()); 
+        /*
+            localVariables2.value += localVariables2.step;
+            return localVariables2.value;  
+            localVariables1 = {
+                value: 20,
+                step: 5
+            }      
+        */        
+        con               
+    </script>
+</body>
+</html>
