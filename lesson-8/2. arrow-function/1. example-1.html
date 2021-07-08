@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        
+        /*
+        стрелочная функция не имеет своего this и поэтому 
+        заимствует this у ФУНКЦИИ,
+        внутри которой она БЫЛА СОЗДАНА, В МОМЕНТ СВОЕГО СОЗДАНИЯ.
+        Причем делает это раз и навсегда - а значит,
+        this внутри стрелочной функции ВСЕГДА будет
+        равен одному и тому же объекту, и неважно, где и как она вызвана
+        */
+
+        const isAdult = (age)=> {
+            console.log(this);
+            /* функция isAdult создана с помощью функции общего потока,
+            а значит будет ссылаться на Window
+             */
+        }
+        
+        const person = {
+            age: 18,
+            getAge: () => {
+                console.log(this);
+                /*
+                метод person.getAge создан внутри Window,
+                а значит this будет ссылаться на него
+                 */
+            },
+            showAge() {
+                console.log(this);
+                // this === Person, потому что person.showAge принадлежит объекту person
+
+                setTimeout(() => {
+                    console.log(this);
+                    /* анонимная стрелочная функция внутри setTimeout
+                    /была создана ВНУТРИ метода showAge в момент ее вызова.
+                    А значит она ЗАИМСТВУЕТ у метода showAge ее this.
+                    А this у метода showAge ссылается на объект person
+                     */
+                }, 500);
+            },
+            tabel: {
+                biology: 13,
+                mathematic: 8,
+                history: 9,
+                calcAvarageScore() {
+                    console.log(this)
+                    const calcSum = ()=> {
+                        console.log(this);
+                        /* функция calcSum создана внутри calcAvarageScore -
+                        а значит берет ее this.
+                        А ее this ссылается на объект person.tabel
+                         */
+                    };
+
+                    calcSum(); // this === person.tabel
+                }
+            }
+        };
+
+        // isAdult();
+       // person.getAge();
+    //    person.showAge();
+    //    person.tabel.calcAvarageScore();
+//        person.tabel.getLowerScore();
+
+
+    </script>
+</body>
+
+</html>

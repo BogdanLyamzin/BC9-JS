@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        .btn {
+            display: inline-block;
+            text-decoration: none;
+            color: red;
+            padding: 10px 15px;
+            border: 1px solid red;
+            border-radius: 5px;
+            background-color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+<a href="#" id="btn-test" class="btn">Click me!</a>
+<script>
+
+    /* this - внутренняя переменная функции,
+        которая при вызове функции всегда ссылается на объект,
+        КОТОРОМУ принаджелит функция В МОМЕНТ ВЫЗОВА.
+     */
+
+    const button = document.getElementById("btn-test");
+    // сохраняем в переменную button ссылку на DOM-элемент - а с id btn-test
+    button.addEventListener("click", reverseBtn);
+    /* в момент клика функция reverseBtn будет принадлежать кнопке,
+     значит this === button
+     */
+
+    console.log(button.click);
+    reverseBtn();
+    /* в момент вызову функции она будет принадлежать глобальному объекту Window,
+    а значит если просто вызвать функцию this === Window
+
+    /*
+    В момент создания функция  reverseBtn принадлежит глобальному объекту Window
+    */
+    function reverseBtn() {
+        console.log(this);
+        const {color, backgroundColor} = window.getComputedStyle(this);
+        this.style.color = backgroundColor;
+        this.style.backgroundColor = color;
+    }
+
+</script>
+
+</body>
+
+</html>

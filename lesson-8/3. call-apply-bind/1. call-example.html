@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        const user1 = {
+            name: "Отурн",
+            lastName: "ди'Аншвар"
+        };
+
+        const user2 = {
+            name: "Крогар",
+            lastName: "ди'Аншвар"
+        };
+
+        const getFullName = function() {
+            console.log(this)
+            return `${this.name} ${this.lastName}`;
+        };
+
+        getFullName()
+        /* call позволяет "одолжить" объекту функцию/метод. 
+        И тогда при вызове через call функция временно 
+        будет принадлежать объекту,
+        переданному первым аргументом в функцию. 
+        То есть this внутри функции в момент 
+        вызова будет ссылаться на этот объект.
+        */
+        getFullName.call(user1);
+        console.log(user1);
+        getFullName.call(user2);
+        console.log(user2);
+        /* если вызываете функцию через call,
+        то первый аргумент - это всегда ссылка на объект, которому вы ее "одалживаете"
+        /*
+
+        // По факту происходит вот это:
+         user.getFullName = getFullName;
+         console.log(user.getFullName());
+         delete user.getFullName;
+         */
+        // console.log(user); // видно, что у объекта user нет метода getFullName()
+    </script>
+</body>
+</html>

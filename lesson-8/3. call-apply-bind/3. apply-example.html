@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<body>
+    <script>
+
+        const completeUser = function(name, lastName, age) {
+            this.name = name;
+            this["last name"] = lastName;
+            this.age = age;
+            return true;
+        }
+
+        const objProperties = ["Алексей", "Маматов", 42];
+
+        const user = {};
+        // completeUser.call(user, ...objProperties);
+        completeUser.apply(user, objProperties);
+        
+        console.log(user)
+        /* с помощью .apply можно одолжить функцию,
+        передав ей целый массив аргументов,
+        который превратится в набор значений через запятую.
+        Применяется, если количество аргументов неизвестно/может быть переменным
+        */
+        // completeUser.apply(user, objProperties);
+        /*
+        // по факту при вызове функции происходит вот это:
+        completeUser(objProperties[0], objProperties[1], objProperties[2]);
+        this = user;
+        this.name = name;
+        this["last name"] = lastName;
+        this.age = age;
+        // после появления ES6 часто используют деструктуризацию массива
+        // const newUser = createUser(...objProperties);        
+        */
+        // console.log(user);
+
+
+
+    </script>
+
+</body>
+
+</html>

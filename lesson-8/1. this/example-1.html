@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+
+        /* this - внутренняя переменная функции,
+            которая при вызове функции всегда ссылается на объект,
+            КОТОРОМУ принаджелит функция В МОМЕНТ ВЫЗОВА.
+         */
+
+        function isAdult(age) {
+            // this = Window // текущий владелец
+            console.log(this);
+            return (age >= 18);
+        }
+        console.log(window.isAdult)
+        /* при объявлении в глобальной области видимости
+        функция изначально принадлежит глобальному объекту Window
+        */
+
+        isAdult(); // this === Window
+
+    </script>
+
+</body>
+
+</html>

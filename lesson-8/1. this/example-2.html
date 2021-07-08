@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+
+<script>
+
+    /* this - внутренняя переменная функци,
+        которая при вызове функции всегда ссылается на объект,
+        КОТОРОМУ принаджелит функция В МОМЕНТ ВЫЗОВА.
+     */
+
+    function isAdult(age) {
+        console.log(this);
+        return (age > 18);
+    }
+
+    const user1 = {
+        name: "Тацумаки",
+        "last name": "Смерч Ужаса",
+        getPermission() {
+            console.log(this);
+            // метод getPermission принадлежит объекту user1, а значит и this === user1 внутри него
+            isAdult(this.age);
+            /* неважно, что функция isAdult вызывается внутри метода getPermission -
+            все равно она принадлежит объекту Window,
+            а значит this в момент ее вызова будет равен Window
+             */
+            return (this.age > 18);
+        },
+        tabel: {
+            "biology": 11,
+            "phisic": 8,
+            "history": 12,
+            calcAvarageScore: function () {
+                console.log(this);
+                /* метод calcAvarageScore принадлежит объекту tabel,
+                а значит и this === user1.tabel внутри него
+                 */
+                calcScoreCount();
+                /* this === Window - не важно, где функция вызывается,
+                важно, кому она принадлежить в момент вызова */
+
+                /*
+                функция, созданная внутри метода объекта, тем не менее
+                принадлежит глобальному объекту Window
+                */
+                function calcScoreCount() {
+                    console.log(this);
+                }
+            }
+        }
+    };
+    // user1.getPermission();
+    /* метод getPermission принадлежит объекту user1,
+    а значит и this в момент его вызова будет ссылаться на объект user1.
+    */
+    // общее правило - при вызове метода  this - это ВСЕГДА объект перед точкой
+
+    // user1.tabel.calcAvarageScore();
+    /* this внутри метода будет ссылаться на объект user1.tabel,
+    потому что принадлежит ему в момент вызова.
+    Функция же calcScoreCount хоть и создана внутри функции calcAvarageScore,
+    которая принадлежит объекту user1.tabel,
+    но сама она не принадлежит ему - она свободная функция,
+    а значит this внутри нее будет равен Window
+     */
+
+
+</script>
+
+</body>
+
+</html>

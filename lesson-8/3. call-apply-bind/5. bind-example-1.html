@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button id="click-me">Show user full name</button>
+<script>
+
+    const getFullName = function () {
+        console.log(this)
+        return `${this.name} ${this.lastName}`;
+    };
+
+    const user1 = {
+        name: "Атомный",
+        lastName: "Самурай",
+        getFIO(){
+            console.log(this);
+            console.log(`${this.name[0]}${this.lastName[0]}`)
+        }
+    };
+
+    const user2 = {
+        name: "Световой",
+        lastName: "Флеш"
+    };
+
+    const getUserFullName = getFullName.bind(user1);
+    // console.log(getUserFullName);
+    // getFullName();
+    // getUserFullName(); 
+    // getUserFullName.call(user2);
+    // user1.getFIO()
+    // setTimeout(user1.getFIO.bind(user1), 2000);
+    
+</script>
+</body>
+</html>
